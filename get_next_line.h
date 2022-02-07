@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/05 16:44:51 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/07 17:58:03 by acroisie         ###   ########lyon.fr   */
+/*   Created: 2021/11/16 08:12:27 by acroisie          #+#    #+#             */
+/*   Updated: 2021/11/25 10:25:57 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
-# include "mlx/mlx.h"
-# include "libft/libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# include <unistd.h>
+# include <stdlib.h>
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-typedef struct s_data
-{
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}t_data;
-
-void	ft_error_check(int argc, char **argv);
-void	ft_put_error(int message_id);
-int		ft_exstension_check(char *argv);
-int		ft_folder_check(char *argv);
-int		ft_opening_check(char *argv);
-void	ft_check_map(char *map);
-
+char	*get_next_line(int fd);
+int		ft_strlen(char *str);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strndup(char *src, int n);
 #endif
