@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 10:34:02 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/07 17:34:00 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/08 09:57:24 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void	ft_put_error(int message_id)
 
 void	ft_error_check(int argc, char **argv)
 {
+	t_map	map;
+
 	if (argc < 2)
 		ft_put_error(1);
 	else if (argc > 2)
@@ -80,5 +82,6 @@ void	ft_error_check(int argc, char **argv)
 		ft_put_error(4);
 	else if (ft_opening_check(argv[1]))
 		ft_put_error(5);
-	ft_check_map(argv[1]);
+	ft_init_map(argv[1], &map);
+	// ft_check_map(map);
 }
