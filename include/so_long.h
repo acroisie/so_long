@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 16:44:51 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/08 14:25:21 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/08 16:58:40 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_put_error(int message_id);
 int		ft_exstension_check(char *argv);
 int		ft_folder_check(char *argv);
 int		ft_opening_check(char *argv);
-void	ft_check_map(char *map);
 void	ft_init_map(char *argv, t_map *map);
+void	ft_check_map(t_map *map);
 
 #endif

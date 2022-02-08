@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 10:34:02 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/08 12:17:56 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/08 18:19:06 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ void	ft_put_error(int message_id)
 		ft_putendl_fd("You must provide a file, not a folder", 2);
 	if (message_id == 5)
 		ft_putendl_fd("Cannot open the file", 2);
+	if (message_id == 6)
+		ft_putendl_fd("Map not rectangular", 2);
 	exit (1);
 }
 
@@ -83,5 +85,5 @@ void	ft_error_check(int argc, char **argv)
 	else if (ft_opening_check(argv[1]))
 		ft_put_error(5);
 	ft_init_map(argv[1], &map);
-	// ft_check_map(map);
+	ft_check_map(&map);
 }
