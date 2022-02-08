@@ -6,11 +6,11 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 08:11:27 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/08 09:24:39 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/08 14:22:45 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../include/so_long.h"
 
 int	ft_find_end_of_line(char *str)
 {
@@ -44,7 +44,7 @@ char	*ft_fill_buffer(int fd, char *buffer)
 			break ;
 		}
 		buffer[ret] = '\0';
-		temp = ft_strjoin(temp, buffer);
+		temp = ft_strjoin_free_s1(temp, buffer);
 	}
 	return (temp);
 }

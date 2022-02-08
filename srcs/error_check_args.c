@@ -6,11 +6,11 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 10:34:02 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/08 09:57:24 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/08 12:17:56 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 int	ft_opening_check(char *argv)
 {
@@ -34,7 +34,7 @@ int	ft_folder_check(char *argv)
 	return (0);
 }
 
-int	ft_exstension_check(char *argv)
+int	ft_extension_check(char *argv)
 {
 	int	i;
 

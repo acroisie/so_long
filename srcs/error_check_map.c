@@ -6,9 +6,9 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 17:56:01 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/08 08:24:23 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/08 12:17:15 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 

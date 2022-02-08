@@ -6,11 +6,11 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 13:55:24 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/08 08:31:06 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/08 11:16:54 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 int	main(int argc, char **argv)
 {
