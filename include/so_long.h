@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 16:44:51 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/08 16:58:40 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/09 14:12:25 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,17 @@ typedef struct s_map
 	int		line_count;
 }t_map;
 
+typedef struct s_item
+{
+	int	i;
+	int	j;
+	int	count_e;
+	int	count_c;
+	int	count_p;
+}t_item;
 
-void	ft_error_check(int argc, char **argv);
+
+t_map	ft_error_check(int argc, char **argv);
 void	ft_put_error(int message_id);
 int		ft_exstension_check(char *argv);
 int		ft_folder_check(char *argv);

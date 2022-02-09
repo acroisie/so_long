@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 10:34:02 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/08 18:19:06 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/09 14:34:42 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,16 @@ void	ft_put_error(int message_id)
 		ft_putendl_fd("Cannot open the file", 2);
 	if (message_id == 6)
 		ft_putendl_fd("Map not rectangular", 2);
+	if (message_id == 7)
+		ft_putendl_fd("Wrong character used, you must use \"E,C,P,1,0\"", 2);
+	if (message_id == 8)
+		ft_putendl_fd("Map is not closed", 2);
+	if (message_id == 9)
+		ft_putendl_fd("Wrong number of items, put 1*P & at least 1*C, 1*E", 2);
 	exit (1);
 }
 
-void	ft_error_check(int argc, char **argv)
+t_map	ft_error_check(int argc, char **argv)
 {
 	t_map	map;
 
@@ -86,4 +92,5 @@ void	ft_error_check(int argc, char **argv)
 		ft_put_error(5);
 	ft_init_map(argv[1], &map);
 	ft_check_map(&map);
+	return (map);
 }

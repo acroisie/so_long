@@ -6,11 +6,24 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 08:13:20 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/08 18:26:47 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/09 09:53:31 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+void	ft_supress_line_break(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '\n')
+			str[i] = '\0';
+		i++;
+	}
+}
 
 int	ft_count_line(char *argv)
 {
@@ -45,7 +58,7 @@ void	ft_init_map(char *argv, t_map *map)
 	while (i < map->line_count)
 	{
 		map->map[i] = get_next_line(fd);
-		dprintf(2, "%d\n", ft_strlen(map->map[i]));
+		ft_supress_line_break(map->map[i]);
 		if (!map->map[i])
 		{
 			ft_free_split(map->map);
