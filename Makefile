@@ -6,7 +6,7 @@
 #    By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 10:04:41 by acroisie          #+#    #+#              #
-#    Updated: 2022/02/09 17:02:06 by acroisie         ###   ########lyon.fr    #
+#    Updated: 2022/02/10 15:43:44 by acroisie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRCS := main.c \
 		error_check_args.c \
 		error_check_map.c \
 		so_long_utils.c	\
-		get_next_line.c
+		get_next_line.c \
+		move_avatar.c
 
 OBJS := $(SRCS:.c=.o)
 

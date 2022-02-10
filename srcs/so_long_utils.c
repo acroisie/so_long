@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 08:13:20 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/09 09:53:31 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/10 15:04:04 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,36 @@ void	ft_init_map(char *argv, t_map *map)
 	while (i < map->line_count)
 	{
 		map->map[i] = get_next_line(fd);
-		ft_supress_line_break(map->map[i]);
 		if (!map->map[i])
 		{
 			ft_free_split(map->map);
+			close(fd);
 			exit (1);
 		}
+		ft_supress_line_break(map->map[i]);
 		i++;
 	}
 	map->map[i] = NULL;
 	close(fd);
+}
+
+int	ft_clean_exit(t_game *game)
+{
+	ft_free_split(game->map.map);
+	exit (1);
+}
+
+int	ft_key_hook(int key_code, t_game *game)
+{
+	if (key_code == 53)
+		ft_clean_exit(game);
+	if (key_code == 13 || key_code == 126)
+		ft_move_avatar(1, game);
+	if (key_code == 0 || key_code == 123)
+		ft_move_avatar(2, game);
+	if (key_code == 1 || key_code == 125)
+		ft_move_avatar(3, game);
+	if (key_code == 2 || key_code == 124)
+		ft_move_avatar(4, game);
+	return (0);
 }

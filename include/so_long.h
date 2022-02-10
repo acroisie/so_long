@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 16:44:51 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/09 14:12:25 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/10 15:04:29 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,13 @@ typedef struct s_map
 	int		line_count;
 }t_map;
 
+typedef struct s_game
+{
+	void	*mlx;
+	void	*mlx_window;
+	t_map	map;
+}t_game;
+
 typedef struct s_item
 {
 	int	i;
@@ -34,7 +41,6 @@ typedef struct s_item
 	int	count_p;
 }t_item;
 
-
 t_map	ft_error_check(int argc, char **argv);
 void	ft_put_error(int message_id);
 int		ft_exstension_check(char *argv);
@@ -42,5 +48,8 @@ int		ft_folder_check(char *argv);
 int		ft_opening_check(char *argv);
 void	ft_init_map(char *argv, t_map *map);
 void	ft_check_map(t_map *map);
+int		ft_clean_exit(t_game *game);
+int		ft_key_hook(int key_code, t_game *game);
+int		ft_move_avatar(int move_id, t_game *game);
 
 #endif

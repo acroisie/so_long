@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 10:34:02 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/09 14:34:42 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/10 11:31:19 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ int	ft_opening_check(char *argv)
 	int	fd;
 
 	fd = open(argv, O_RDONLY);
-	close(fd);
 	if (fd < 0)
+	{
+		close(fd);
 		return (1);
+	}
+	close(fd);
 	return (0);
 }
 
@@ -28,9 +31,12 @@ int	ft_folder_check(char *argv)
 	int	fd;
 
 	fd = open(argv, O_DIRECTORY);
-	close(fd);
 	if (fd > 0)
+	{
+		close(fd);
 		return (1);
+	}
+	close(fd);
 	return (0);
 }
 
