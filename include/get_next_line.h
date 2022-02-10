@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 08:12:27 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/08 14:28:49 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/09 17:45:34 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@
 # endif
 
 char	*get_next_line(int fd);
+int		ft_key_hook(int hook, t_map *map);
 
 #endif

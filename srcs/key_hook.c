@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   key_hook.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/03 13:55:24 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/09 18:03:25 by acroisie         ###   ########lyon.fr   */
+/*   Created: 2022/02/09 17:43:46 by acroisie          #+#    #+#             */
+/*   Updated: 2022/02/09 18:03:50 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-int	main(int argc, char **argv)
+int	ft_key_hook(int hook, t_map *map)
 {
-	t_map	map;
-	void	*mlx;
-	void	*mlx_window;
-
-	map = ft_error_check(argc, argv);
-	mlx = mlx_init();
-	mlx_window = mlx_new_window(mlx, 800, 600, "Test_window");
-	mlx_key_hook(mlx_window, ft_key_hook, &map.map);
-	// mlx_loop(mlx);
-	// ft_free_split(map.map);
-	return (0);
+	if (hook)
 }
