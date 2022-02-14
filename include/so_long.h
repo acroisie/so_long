@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 16:44:51 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/14 20:32:56 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/14 22:03:32 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	ft_check_map(t_map *map);
 int		ft_clean_exit(t_game *game);
 int		ft_key_hook(int key_code, t_game *game);
 int		ft_move_avatar(int move_id, t_game *game);
-void	ft_link_images(t_game *game);
-void	ft_display_map(t_game game);
+void	ft_display_map(t_game *game);
 
 #endif

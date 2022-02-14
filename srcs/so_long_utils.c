@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 08:13:20 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/14 16:37:27 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/14 21:55:22 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,19 +73,18 @@ void	ft_init_map(char *argv, t_map *map)
 
 int	ft_clean_exit(t_game *game)
 {
-	// mlx_destroy_image(game->mlx, game->image.char_down);
-	// mlx_destroy_image(game->mlx, game->image.char_left);
-	// mlx_destroy_image(game->mlx, game->image.char_right);
-	// mlx_destroy_image(game->mlx, game->image.char_up);
-	// mlx_destroy_image(game->mlx, game->image.closed_exit);
-	// mlx_destroy_image(game->mlx, game->image.floor);
-	// mlx_destroy_image(game->mlx, game->image.key);
-	// mlx_destroy_image(game->mlx, game->image.obstacle);
-	// mlx_destroy_image(game->mlx, game->image.opened_exit);
-	// mlx_destroy_window(game->mlx, game->mlx_window);
-	if (game->map.map)
-		ft_free_split(game->map.map);
-	exit (1);
+	mlx_destroy_image(game->mlx, game->image.char_down);
+	mlx_destroy_image(game->mlx, game->image.char_left);
+	mlx_destroy_image(game->mlx, game->image.char_right);
+	mlx_destroy_image(game->mlx, game->image.char_up);
+	mlx_destroy_image(game->mlx, game->image.closed_exit);
+	mlx_destroy_image(game->mlx, game->image.floor);
+	mlx_destroy_image(game->mlx, game->image.key);
+	mlx_destroy_image(game->mlx, game->image.obstacle);
+	mlx_destroy_image(game->mlx, game->image.opened_exit);
+	mlx_destroy_window(game->mlx, game->mlx_window);
+	ft_free_split(game->map.map);
+	exit (0);
 }
 
 int	ft_key_hook(int key_code, t_game *game)
