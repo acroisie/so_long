@@ -6,13 +6,13 @@
 #    By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 10:04:41 by acroisie          #+#    #+#              #
-#    Updated: 2022/02/14 16:39:03 by acroisie         ###   ########lyon.fr    #
+#    Updated: 2022/02/14 20:28:59 by acroisie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc 
 
-CC_FLAGS = -Wall -Werror -Wextra #-fsanitize=address -g3
+CC_FLAGS = -Wall -Werror -Wextra
 
 NAME := so_long
 
@@ -30,26 +30,26 @@ all : libft $(NAME)
 
 
 $(NAME):		libft mlx $(addprefix objs/, $(OBJS)) Makefile
-					$(CC) -o $(NAME) $(addprefix objs/, $(OBJS)) srcs/libft/libft.a srcs/mlx/libmlx.a -framework OpenGL -framework AppKit
+					$(CC) -o $(NAME) $(addprefix objs/, $(OBJS)) libft/libft.a mlx/libmlx.a -framework OpenGL -framework AppKit
 
-objs/%.o:		srcs/%.c include/so_long.h include/get_next_line.h srcs/libft/libft.a srcs/mlx/libmlx.a
+objs/%.o:		srcs/%.c include/so_long.h include/get_next_line.h libft/libft.a mlx/libmlx.a
 					@mkdir -p objs
 					$(CC) $(CC_FLAGS) -c $< -o $@
 
 libft :	
-		$(MAKE) -C srcs/libft
+		$(MAKE) -C libft
 
 mlx :	
-		$(MAKE) -C srcs/mlx
+		$(MAKE) -C mlx
 
 clean :
 		rm -rf objs
-		make clean -C srcs/libft
+		make clean -C libft
 
 fclean : clean
 		rm -f $(NAME)
-		make fclean -C srcs/libft
-		make clean -C srcs/mlx
+		make fclean -C libft
+		make clean -C mlx
 
 re : fclean all
 

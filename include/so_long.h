@@ -6,14 +6,14 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 16:44:51 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/14 14:57:16 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/14 20:32:56 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
-# include "../srcs/mlx/mlx.h"
-# include "../srcs/libft/libft.h"
+# include "../mlx/mlx.h"
+# include "../libft/libft.h"
 # include "get_next_line.h"
 # include <sys/types.h>
 # include <sys/stat.h>

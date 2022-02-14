@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 08:12:27 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/10 10:11:08 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/14 20:33:11 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
-# include "../srcs/libft/libft.h"
+# include "../libft/libft.h"
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
