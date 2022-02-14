@@ -41,18 +41,15 @@
 ** c'est normalement le cas.
 */
 
-
 #ifndef MLX_H
 
-#define	MLX_H
+# define MLX_H
 
-
-void	*mlx_init();
+void	*mlx_init(void);
 /*
 **  needed before everything else.
 **  return (void *)0 if failed
 */
-
 
 /*
 ** Basic actions
@@ -69,7 +66,6 @@ int	mlx_pixel_put(void *mlx_ptr, void *win_ptr, int x, int y, int color);
 **  y down is positive
 **  color is 0x00RRGGBB
 */
-
 
 /*
 ** Image stuff
