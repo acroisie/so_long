@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 11:48:34 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/10 17:13:10 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/14 10:02:30 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,6 @@ int	ft_check_impossible_move(int move_id, t_game game)
 	int	j;
 
 	ft_find_position(&i, &j, game);
-	// int	i;
-	// int	j;
-
-	// i = 0;
-	// while (game.map.map[i])
-	// {
-	// 	j = 0;
-	// 	while (game.map.map[i][j])
-	// 	{
-	// 		if (game.map.map[i][j] == 'P')
-	// 			break ;
-	// 		j++;
-	// 	}
-	// 	if (game.map.map[i][j] == 'P')
-	// 		break ;
-	// 	i++;
-	// }
 	if (move_id == 1)
 		if (game.map.map[i - 1][j] != '1')
 			return (0);
