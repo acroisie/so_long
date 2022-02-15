@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 16:44:51 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/14 22:03:32 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/15 10:10:22 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ typedef struct s_map
 	char	**map;
 	int		line_count;
 	int		column_count;
+	int		c_count;
+	int		pos_p_x;
+	int		pos_p_y;
 }t_map;
 
 typedef struct s_image

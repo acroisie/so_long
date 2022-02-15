@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 13:48:37 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/14 22:16:27 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/15 11:38:07 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_object_to_display(t_game game, char c, int x, int y)
 	if (c == '1')
 		mlx_put_image_to_window(game.mlx, game.mlx_window,
 			game.image.obstacle, x, y);
-
 }
 
 void	ft_display_floor(t_game game)

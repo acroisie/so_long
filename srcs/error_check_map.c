@@ -6,13 +6,13 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 17:56:01 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/14 13:40:27 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/15 09:23:50 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-int	ft_check_item(char **map)
+int	ft_check_item(t_map *map)
 {
 	t_item	item;
 
@@ -20,16 +20,16 @@ int	ft_check_item(char **map)
 	item.count_e = 0;
 	item.count_c = 0;
 	item.count_p = 0;
-	while (map[item.i])
+	while (map->map[item.i])
 	{
 		item.j = 0;
-		while (map[item.i][item.j])
+		while (map->map[item.i][item.j])
 		{
-			if (map[item.i][item.j] == 'E')
+			if (map->map[item.i][item.j] == 'E')
 				item.count_e++;
-			if (map[item.i][item.j] == 'C')
+			if (map->map[item.i][item.j] == 'C')
 				item.count_c++;
-			if (map[item.i][item.j] == 'P')
+			if (map->map[item.i][item.j] == 'P')
 				item.count_p++;
 			item.j++;
 		}
@@ -37,6 +37,7 @@ int	ft_check_item(char **map)
 	}
 	if (item.count_c < 1 || item.count_e < 1 || item.count_p != 1)
 		return (1);
+	map->c_count = item.count_c;
 	return (0);
 }
 
@@ -121,7 +122,7 @@ void	ft_check_map(t_map *map)
 		ft_free_split(map->map);
 		ft_put_error(8);
 	}
-	if (ft_check_item(map->map))
+	if (ft_check_item(map))
 	{
 		ft_free_split(map->map);
 		ft_put_error(9);
