@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_avatar.c                                      :+:      :+:    :+:   */
+/*   move_avatar_part_1.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 11:48:34 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/15 14:48:06 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/15 16:15:12 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,63 +66,30 @@ int	ft_check_impossible_move(int move_id, t_game *game)
 
 void	ft_map_update(int move_id, t_game *game)
 {
-	int static	c_count;
-
+	ft_check_end_of_game(game);
 	if (move_id == 1)
 	{
 		if (game->map.map[game->map.pos_p_y][game->map.pos_p_x] == 'C')
-		{
-			game->map.map[game->map.pos_p_y][game->map.pos_p_x] = '0';
-			mlx_put_image_to_window(game->mlx, game->mlx_window,
-				game->image.floor, (game->map.pos_p_x * 32),
-				(game->map.pos_p_y * 32));
-			c_count++;
-		}
-		mlx_put_image_to_window(game->mlx, game->mlx_window,
-			game->image.char_up, (game->map.pos_p_x * 32),
-			(game->map.pos_p_y * 32));
+			ft_display_floor_tile(game);
+		ft_display_char_up(game);
 	}
 	if (move_id == 2)
 	{
 		if (game->map.map[game->map.pos_p_y][game->map.pos_p_x] == 'C')
-		{
-			game->map.map[game->map.pos_p_y][game->map.pos_p_x] = '0';
-			mlx_put_image_to_window(game->mlx, game->mlx_window,
-				game->image.floor, (game->map.pos_p_x * 32),
-				(game->map.pos_p_y * 32));
-			c_count++;
-		}
-		mlx_put_image_to_window(game->mlx, game->mlx_window,
-			game->image.char_left, (game->map.pos_p_x * 32),
-			(game->map.pos_p_y * 32));
+			ft_display_floor_tile(game);
+		ft_display_char_left(game);
 	}
 	if (move_id == 3)
 	{
 		if (game->map.map[game->map.pos_p_y][game->map.pos_p_x] == 'C')
-		{
-			game->map.map[game->map.pos_p_y][game->map.pos_p_x] = '0';
-			mlx_put_image_to_window(game->mlx, game->mlx_window,
-				game->image.floor, (game->map.pos_p_x * 32),
-				(game->map.pos_p_y * 32));
-			c_count++;
-		}
-		mlx_put_image_to_window(game->mlx, game->mlx_window,
-			game->image.char_down, (game->map.pos_p_x * 32),
-			(game->map.pos_p_y * 32));
+			ft_display_floor_tile(game);
+		ft_display_char_down(game);
 	}
 	if (move_id == 4)
 	{
 		if (game->map.map[game->map.pos_p_y][game->map.pos_p_x] == 'C')
-		{
-			game->map.map[game->map.pos_p_y][game->map.pos_p_x] = '0';
-			mlx_put_image_to_window(game->mlx, game->mlx_window,
-				game->image.floor, (game->map.pos_p_x * 32),
-				(game->map.pos_p_y * 32));
-			c_count++;
-		}
-		mlx_put_image_to_window(game->mlx, game->mlx_window,
-			game->image.char_right, (game->map.pos_p_x * 32),
-			(game->map.pos_p_y * 32));
+			ft_display_floor_tile(game);
+		ft_display_char_right(game);
 	}
 }
 
@@ -131,7 +98,10 @@ int	ft_move_avatar(int move_id, t_game *game)
 	static int	m_count;
 
 	if (m_count == 0)
+	{
 		ft_find_position(game);
+		game->map.key_count = 0;
+	}
 	if (!ft_check_impossible_move(move_id, game))
 	{
 		ft_leaving_tile(game);
@@ -147,5 +117,7 @@ int	ft_move_avatar(int move_id, t_game *game)
 		m_count++;
 		printf("Amount of moves: %d\n", m_count);
 	}
+	if (game->map.key_count == game->map.c_count)
+		ft_display_open_doors(*game);
 	return (0);
 }

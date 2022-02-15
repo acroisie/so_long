@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 16:44:51 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/15 15:23:21 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/15 16:15:16 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_map
 	int		line_count;
 	int		column_count;
 	int		c_count;
+	int		key_count;
 	int		pos_p_x;
 	int		pos_p_y;
 }t_map;
@@ -71,5 +72,12 @@ int		ft_key_hook(int key_code, t_game *game);
 int		ft_move_avatar(int move_id, t_game *game);
 void	ft_display_map(t_game *game);
 int		ft_count_line(char *argv);
+void	ft_display_floor_tile(t_game *game);
+void	ft_display_char_up(t_game *game);
+void	ft_display_char_left(t_game *game);
+void	ft_display_char_down(t_game *game);
+void	ft_display_char_right(t_game *game);
+void	ft_display_open_doors(t_game game);
+void	ft_check_end_of_game(t_game *game);
 
 #endif
