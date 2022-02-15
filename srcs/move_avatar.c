@@ -6,11 +6,23 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 11:48:34 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/15 13:19:28 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/15 14:48:06 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+void	ft_leaving_tile(t_game *game)
+{
+	if (game->map.map[game->map.pos_p_y][game->map.pos_p_x] != 'E')
+		mlx_put_image_to_window(game->mlx, game->mlx_window,
+			game->image.floor, (game->map.pos_p_x * 32),
+			(game->map.pos_p_y * 32));
+	else
+		mlx_put_image_to_window(game->mlx, game->mlx_window,
+			game->image.closed_exit, (game->map.pos_p_x * 32),
+			(game->map.pos_p_y * 32));
+}
 
 void	ft_find_position(t_game *game)
 {
@@ -58,15 +70,6 @@ void	ft_map_update(int move_id, t_game *game)
 
 	if (move_id == 1)
 	{
-		if (game->map.map[game->map.pos_p_y][game->map.pos_p_x] != 'E')
-			mlx_put_image_to_window(game->mlx, game->mlx_window,
-				game->image.floor, (game->map.pos_p_x * 32),
-				(game->map.pos_p_y * 32));
-		else
-			mlx_put_image_to_window(game->mlx, game->mlx_window,
-				game->image.closed_exit, (game->map.pos_p_x * 32),
-				(game->map.pos_p_y * 32));
-		game->map.pos_p_y -= 1;
 		if (game->map.map[game->map.pos_p_y][game->map.pos_p_x] == 'C')
 		{
 			game->map.map[game->map.pos_p_y][game->map.pos_p_x] = '0';
@@ -81,15 +84,6 @@ void	ft_map_update(int move_id, t_game *game)
 	}
 	if (move_id == 2)
 	{
-		if (game->map.map[game->map.pos_p_y][game->map.pos_p_x] != 'E')
-			mlx_put_image_to_window(game->mlx, game->mlx_window,
-				game->image.floor, (game->map.pos_p_x * 32),
-				(game->map.pos_p_y * 32));
-		else
-			mlx_put_image_to_window(game->mlx, game->mlx_window,
-				game->image.closed_exit, (game->map.pos_p_x * 32),
-				(game->map.pos_p_y * 32));
-		game->map.pos_p_x -= 1;
 		if (game->map.map[game->map.pos_p_y][game->map.pos_p_x] == 'C')
 		{
 			game->map.map[game->map.pos_p_y][game->map.pos_p_x] = '0';
@@ -104,15 +98,6 @@ void	ft_map_update(int move_id, t_game *game)
 	}
 	if (move_id == 3)
 	{
-		if (game->map.map[game->map.pos_p_y][game->map.pos_p_x] != 'E')
-			mlx_put_image_to_window(game->mlx, game->mlx_window,
-				game->image.floor, (game->map.pos_p_x * 32),
-				(game->map.pos_p_y * 32));
-		else
-			mlx_put_image_to_window(game->mlx, game->mlx_window,
-				game->image.closed_exit, (game->map.pos_p_x * 32),
-				(game->map.pos_p_y * 32));
-		game->map.pos_p_y += 1;
 		if (game->map.map[game->map.pos_p_y][game->map.pos_p_x] == 'C')
 		{
 			game->map.map[game->map.pos_p_y][game->map.pos_p_x] = '0';
@@ -127,15 +112,6 @@ void	ft_map_update(int move_id, t_game *game)
 	}
 	if (move_id == 4)
 	{
-		if (game->map.map[game->map.pos_p_y][game->map.pos_p_x] != 'E')
-			mlx_put_image_to_window(game->mlx, game->mlx_window,
-				game->image.floor, (game->map.pos_p_x * 32),
-				(game->map.pos_p_y * 32));
-		else
-			mlx_put_image_to_window(game->mlx, game->mlx_window,
-				game->image.closed_exit, (game->map.pos_p_x * 32),
-				(game->map.pos_p_y * 32));
-		game->map.pos_p_x += 1;
 		if (game->map.map[game->map.pos_p_y][game->map.pos_p_x] == 'C')
 		{
 			game->map.map[game->map.pos_p_y][game->map.pos_p_x] = '0';
@@ -158,6 +134,15 @@ int	ft_move_avatar(int move_id, t_game *game)
 		ft_find_position(game);
 	if (!ft_check_impossible_move(move_id, game))
 	{
+		ft_leaving_tile(game);
+		if (move_id == 1)
+			game->map.pos_p_y -= 1;
+		if (move_id == 2)
+			game->map.pos_p_x -= 1;
+		if (move_id == 3)
+			game->map.pos_p_y += 1;
+		if (move_id == 4)
+			game->map.pos_p_x += 1;
 		ft_map_update(move_id, game);
 		m_count++;
 		printf("Amount of moves: %d\n", m_count);

@@ -6,7 +6,7 @@
 /*   By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 10:34:02 by acroisie          #+#    #+#             */
-/*   Updated: 2022/02/10 11:31:19 by acroisie         ###   ########lyon.fr   */
+/*   Updated: 2022/02/15 15:22:53 by acroisie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ void	ft_put_error(int message_id)
 		ft_putendl_fd("Map is not closed", 2);
 	if (message_id == 9)
 		ft_putendl_fd("Wrong number of items, put 1*P & at least 1*C, 1*E", 2);
+	if (message_id == 10)
+		ft_putendl_fd("File is empty", 2);
 	exit (1);
 }
 
@@ -96,6 +98,8 @@ t_map	ft_error_check(int argc, char **argv)
 		ft_put_error(4);
 	else if (ft_opening_check(argv[1]))
 		ft_put_error(5);
+	else if (!ft_count_line(argv[1]))
+		ft_put_error(10);
 	ft_init_map(argv[1], &map);
 	ft_check_map(&map);
 	return (map);
