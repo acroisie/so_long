@@ -6,7 +6,7 @@
 #    By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 10:04:41 by acroisie          #+#    #+#              #
-#    Updated: 2022/02/15 16:01:18 by acroisie         ###   ########lyon.fr    #
+#    Updated: 2022/02/16 08:44:57 by acroisie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,11 +47,12 @@ mlx :
 clean :
 		rm -rf objs
 		make clean -C libft
+		make clean -C mlx
 
 fclean : clean
 		rm -f $(NAME)
 		make fclean -C libft
-		make clean -C mlx
+		make fclean -C mlx
 
 re : fclean all
 
