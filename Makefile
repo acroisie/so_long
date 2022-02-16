@@ -6,7 +6,7 @@
 #    By: acroisie <acroisie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 10:04:41 by acroisie          #+#    #+#              #
-#    Updated: 2022/02/16 08:44:57 by acroisie         ###   ########lyon.fr    #
+#    Updated: 2022/02/16 13:51:50 by acroisie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,10 @@ SRCS := main.c \
 
 OBJS := $(SRCS:.c=.o)
 
-all : libft $(NAME)
+all : libft mlx $(NAME)
 
 
-$(NAME):		libft mlx $(addprefix objs/, $(OBJS)) Makefile
+$(NAME):		$(addprefix objs/, $(OBJS)) Makefile
 					$(CC) -o $(NAME) $(addprefix objs/, $(OBJS)) libft/libft.a mlx/libmlx.a -framework OpenGL -framework AppKit
 
 objs/%.o:		srcs/%.c include/so_long.h include/get_next_line.h libft/libft.a mlx/libmlx.a
